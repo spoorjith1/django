@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/homestyles.css' %}">
+</head>
+<body>
+    <header>
+        <h1 class="logo"><span class="spanlogo">Tech Learn</span> - Academy</h1>
+        <nav>
+            <div class="navbar">
+                <a href="/">Home</a>
+                <a href="/academy/courses/">Courses</a>
+                <a href="/academy/trainers">Trainers</a>
+                <a href="/academy/students">Students</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="box">
+            <h3 class="boxtitle">Courses</h3>
+            <ul>
+                {% for c in courses %}
+                <li class="courselist">{{ c.course_name }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="box box2">
+            <h3 class="boxtitle">Trainers</h3>
+            <ul>
+                {% for t in trainers %}
+                <li class="tlist1">{{ t.full_name }}</li>
+                <li class="tlist2">{{ t.email }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="box box3">
+            <span class="stdcount">{{ studentsCount }}</span>
+            <h3>Number of Students</h3>
+        </div>
+    </main>
+    <footer>
+        <p><span class="footerlogo">Teach Learn Academy</span> &copy; 2026</p>
+        <div class="footlinks">
+            <p>About</p>
+            <p>Contact</p>
+            <p>Help</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+    <h1>Courses</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Course Name</th>
+                <th>Description</th>
+                <th>Duration</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for c in courses %}
+            <tr>
+                <td>{{ c.course_name }}</td>
+                <td>{{ c.description }}</td>
+                <td>{{ c.duration }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

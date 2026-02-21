@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(1200px 600px at 10% 10%, #1a0f2e 0%, #0b0714 45%, #06040b 100%);
+  color: #eae7ff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin: 24px 0 12px;
+}
+
+table {
+  width: min(1100px, 95%);
+  margin: 16px auto 32px;
+  border-collapse: collapse;
+  background: rgba(20, 12, 40, 0.7);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0px 10px rgba(255, 255, 255, 0.45);
+}
+
+thead th {
+  background: linear-gradient(135deg, #6b3fd6, #3a1c7a);
+  color: #ffffff;
+  text-align: left;
+  padding: 12px 14px;
+  font-weight: 600;
+}
+
+th, td {
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+tbody tr {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+tbody tr:hover {
+  background: rgba(120, 80, 220, 0.15);
+}
+
+td {
+  color: #e6e2ff;
+  line-height: 1.4;
+}
