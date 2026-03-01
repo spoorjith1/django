@@ -1,0 +1,22 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+</head>
+<body>
+    <div class="regdiv">
+        <h2>Register - <span class="logo">Tech Learn</span> Academy</h2>
+        <form action="{% url 'Register' %}" method="POST" class="regform">
+            {% csrf_token %}
+            {{ registerForm.as_p }}
+            <button type="submit" class="btn btn-reg">Register</button>
+        </form>
+    </div>
+</body>
+</html>

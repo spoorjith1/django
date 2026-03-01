@@ -1,0 +1,53 @@
+body {
+    background: radial-gradient(1200px 600px at 10% 10%, #1a0f2e 0%, #0b0714 45%, #06040b 100%);
+    color: white;
+}
+
+.logbox {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    color: #a038ba
+}
+
+.logform {
+    margin-top: 1rem;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 1rem;
+    background: linear-gradient(to bottom, #120c20, #0e0919, #1a0f2e);
+    padding: 30px;
+    box-shadow: 0 0 6px black;
+}
+
+.btn-login {
+    background-color: #a038ba;
+    color: white;
+    width: 270px;
+    font-weight: 500;
+}
+.btn-login:hover {
+    background-color: #a038ba92;
+    color: white;
+}
+
+.logform input {
+    background-color: #1a0f2e;
+    border: 1px solid #06040b;
+    border-radius: 0.3rem;
+    color: white;
+    padding: 4px;
+}
+.logform label {
+    font-size: 1rem;
+}
+.logform input:focus {
+    outline: none;
+    box-shadow: 0 0 0.25rem #a038ba59;
+    border-color: #a038ba;
+}

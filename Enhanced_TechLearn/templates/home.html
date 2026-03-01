@@ -1,0 +1,86 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/homestyles.css' %}">
+</head>
+<body>
+    <header>
+        <h2 class="logo"><span class="spanlogo">Tech Learn</span> Academy</h2>
+        {% if user.is_authenticated %}
+        <div class="hdiv2">
+            <a href="/">Home</a>
+            <a href="/academy/courses/">Courses</a>
+            <a href="/academy/trainers">Trainers</a>
+            <a href="/academy/students">Students</a>
+        </div>
+        {% endif %}
+        {% if not user.is_authenticated %}
+        <div class="hdivs">
+            <a href="{% url 'Register' %}" class="btn btn-register">Register</a>
+            <a href="{% url 'Login' %}" class="btn btn-log">Login</a>
+        </div>
+        {% endif %}
+        {% if user.is_authenticated %}
+        <div class="hdivs">
+            <span class="welcome">Welcome, <span class="username">{{ user.username }}</span>!</span>
+            <a href="{% url 'Logout' %}" class="btn btn-log">Logout</a>
+        </div>
+        {% endif %}
+    </header>
+    <div class="detailbox">
+        <div class="box box1">
+            <h3 class="boxtitle">Courses</h3>
+            <ul>
+                {% for c in courses %}
+                <li class="courselist">{{ c.course_name }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="box box2">
+            <h3 class="boxtitle">Trainers</h3>
+            <ul class="trainersul">
+                {% for t in trainers %}
+                <div>
+                    <li class="tlist1">{{ t.full_name }}</li>
+                    <p class="tlist2">{{ t.email }}</p>
+                </div>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="box box3">
+            <span class="stdcount">{{ studentsCount }}</span>
+            <h3>Number of Students</h3>
+        </div>
+    </div>
+    {% if not user.is_authenticated %}
+    <div class="viewmorediv">
+        <a href="{% url 'Login' %}" class="btn btn-viewmore">View More Details</a>
+    </div>
+    <div class="aboutBox">
+        <p class="about">
+            <span class="aboutlogo">Tech Learn</span> Academy is a learning platform designed to help students build strong technical foundations.
+            We provide structured courses, experienced trainers, and hands-on learning to prepare students for real-world IT careers.
+        </p>
+    </div>
+    {% else %}
+    <div  class="viewmorediv">
+        <a href="{% url 'AddStudent' %}" class="btn btn-viewmore">Add Student</a>
+    </div>
+    {% endif %}
+    <footer>
+        <p class="fh"><span class="footerlogo">Teach Learn Academy</span> &copy; 2026</p>
+        <div class="footlinks">
+            <a href="">About</a>
+            <a href="">Contact</a>
+            <a href="">Help</a>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,54 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/tables.css' %}">
+</head>
+<body>
+    <div class="position-fixed top-0 start-0 m-3">
+        <a href="{% url 'Home' %}" 
+            class="d-inline-flex align-items-center gap-2 text-decoration-none text-light fs-5 px-3 py-2 rounded-3 border border-light">
+            <i class="fa-solid fa-angle-left"></i> Home
+        </a>
+    </div>
+    <h1>Trainers Data</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Trainer Name</th>
+                <th>Email</th>
+                <th>Expertise</th>
+                <th>ACTION</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for t in trainers %}
+            <tr>
+                <td>{{ t.full_name }}</td>
+                <td>{{ t.email }}</td>
+                <td>{{ t.expertise }}</td>
+                <td>
+                    <div  class="crudops">
+                        <a href="{% url 'TrainerD' t.id %}"><i class="fa-solid fa-eye"></i></a>
+                        <a href="{% url 'TrainerE' t.id %}"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href="#" onclick="noAccess(event)"><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <script>
+        function noAccess(event) {
+            event.preventDefault();
+            alert("you dont have access to delete trainer")
+        }
+    </script>
+</body>
+</html>

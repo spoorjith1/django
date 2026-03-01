@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #1f0036, #000000);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+.delbox {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.delcard {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    padding: 26px;
+    border-radius: 18px;
+    text-align: center;
+    width: 400px;
+    color: white;
+    border: 1px solid #ffffff33;
+}
+
+.icon {
+    font-size: 40px;
+    color: #ff4d4d;
+    margin-bottom: 10px;
+}
+
+.title {
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.question {
+    margin-bottom: 24px;
+    font-size: 16px;
+}
+
+.name {
+    font-weight: bold;
+    color: #f64545;
+}
+
+.formbox {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}

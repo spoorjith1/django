@@ -1,0 +1,25 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/edits.css' %}">
+</head>
+<body>
+    <div>
+        <form method="POST">
+            {% csrf_token %}
+            <label>First Name : 
+            <input value="{{ studentData.first_name }}" name="first_name"></label>
+            <label>last Name : 
+            <input value="{{ studentData.last_name }}" name="last_name"></label>
+            <label>email : 
+            <input value="{{ studentData.email }}" name="email"></label>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+body {
+    background: radial-gradient(1200px 600px at 10% 10%, #1a0f2e 0%, #0b0714 45%, #06040b 100%);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    margin-bottom: 16px;
+}
+
+.stdform {
+    text-align: center;
+    border: 1px solid white;
+    padding: 26px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.stdform p {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.stdform label {
+    width: 150px;
+    text-align: left;
+}
+
+.stdform input,
+.stdform select {
+    width: 220px;
+}
+
+.stdform input, .stdform select {
+    background-color: #1a0f2e;
+    color: rgb(218, 217, 217);
+    border: none;
+    border-radius: 6px;
+}

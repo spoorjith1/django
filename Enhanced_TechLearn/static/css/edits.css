@@ -1,0 +1,41 @@
+body {
+    background: radial-gradient(1200px 600px at 10% 10%, #1a0f2e 0%, #0b0714 45%, #06040b 100%);
+    color: rgb(213, 211, 211);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+div {
+    border: 1px solid #a038ba;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+button {
+    width: 100px;
+    height: 34px;
+    border-radius: 6px;
+    background-color: cadetblue;
+    border: none;
+    font-size: 14px;
+}
+button:hover {
+    opacity: 0.8;
+}
+
+form input {
+    background-color: #1a0f2e;
+    border: 1px solid rgb(167, 166, 166);
+    border-radius: 6px;
+    color: rgb(211, 211, 211);
+    padding: 4px;
+}

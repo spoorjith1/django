@@ -1,0 +1,20 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/details.css' %}">
+</head>
+<body>
+    <div>
+        <h1>{{ student.full_name }}</h1>
+        <p>{{ student.email }}</p>
+        <p>Course : {{ student.enrolled_course }}</p>
+        <p>Trainer : {{ student.trainer }}</p>
+        <p>Active : {{ student.is_active }}</p>
+    </div>
+</body>
+</html>
