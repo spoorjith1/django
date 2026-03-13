@@ -1,0 +1,51 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+</head>
+<body>
+    <h1>XYZ</h1>
+    <h3>Welcome, to XYZ Employees</h3>
+    <div class="container">
+        <table>
+            <tr>
+                <th>Actions</th>
+                <th>Links (End Points)</th>
+            </tr>
+            <tr>
+                <td><a href="http://127.0.0.1:8000/api/v1/employees/">View Employees</a></td>
+                <td>
+                    <a href="http://127.0.0.1:8000/api/v1/employees/">http://127.0.0.1:8000/api/v1/employees/</a>
+                </td>
+            </tr>
+            <tr>
+                <td><a href="http://127.0.0.1:8000/api/v1/employees/?limit=5&offset=10">Limitoffset</a></td>
+                <td>
+                    <a href="http://127.0.0.1:8000/api/v1/employees/?limit=5&offset=10">http://127.0.0.1:8000/api/v1/employees/?limit=5&offset=10</a>
+                </td>
+            </tr>
+            <tr>
+                <td><a href="http://127.0.0.1:8000/api/v1/employees/?emp_id_min=XYZ002&emp_id_max=XYZ006">Employee Id min and max</a></td>
+                <td>
+                    <a href="http://127.0.0.1:8000/api/v1/employees/?emp_id_min=XYZ002&emp_id_max=XYZ006">
+                        http://127.0.0.1:8000/api/v1/employees/?emp_id_min=XYZ002&emp_id_max=XYZ006
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td><a href="http://127.0.0.1:8000/api/v1/employees/?salary_min=10000&salary_max=50000">Employee Salary min and max</a></td>
+                <td>
+                    <a href="http://127.0.0.1:8000/api/v1/employees/?salary_min=10000&salary_max=50000">
+                        http://127.0.0.1:8000/api/v1/employees/?salary_min=10000&salary_max=50000
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
